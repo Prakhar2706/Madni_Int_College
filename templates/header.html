@@ -1,0 +1,112 @@
+
+        <!-- header starts here -->
+        <header id="header" class="">
+            <!-- header -->
+            <div class="header-wrapper">
+                <div class="header-container">
+                    <div>
+                        <div class="logo-name">
+                            <div class="logo">
+                                <a href="{% url "index" %}"  title=""><img src="static/img/mic_logo.jpg" alt="logo"></a>
+                            </div>
+                            <div class="name">
+                                <a href="{% url "index" %}" title="">
+                                    <h5>MADNI INTER COLLEGE</h5>
+                                    <h5 class="primary-color">KAISERGANJ</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-links">
+                        <a href="#" data-toggle="popover" title="Address" data-content="Madni Inter College Huzoorpur Road Kaiserganj District Bahraich U.P.-271903" data-placement="bottom"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="popover" title="Phone No." data-content="+9198383 35744" data-placement="bottom"><i class="fa fa-phone fa-lg" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="popover" title="Email" data-content="madniintercollege@gmail.com" data-placement="bottom"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="navbar navbar-inverse navbar-custom" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="/Institute" class="dropdown-toggle" data-toggle="dropdown">Institute <b
+                                        class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li class="active"><a href="{% url "about" %}">About</a></li>
+                                        <li>
+                                            <a href="{% url "initial" %}">The Initiative
+                                            </a>
+                                        </li>
+                                        <li><a href="{% url "directors_message" %}">Director's Message</a></li>
+                                        <li>
+                                            <a href="{% url "academic_council" %}">Challenges</a>
+                                        </li>
+
+                                        <li><a href="{% url "rti" %}">RTI</a></li>
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics <b
+                                        class="caret"></b></a>
+
+                                    <ul class="dropdown-menu multi-level">
+
+                                        <li>
+                                            <a href="static/pdf/College_Brochure.pdf" target="_blank">College Brochure</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission <b
+                                        class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li>
+                                            <a href="{% url "form" %}" target="_blank">Admission form</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b
+                                        class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li><a href="{% url "faq" %}">FAQs</a></li>
+                                        <li><a href="{% url "student_corner" %}">Student's Corner</a></li>
+
+                                        <li><a href="{% url "library" %}">Library</a></li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students Corner <b
+                                        class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li>
+                                            <a href="{% url "time_table" %}" target="_blank">Time Table</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="{% url "faculty" %}">Faculty</a></li>
+                                <li><a href="{% url "career" %}">Career</a></li>
+                                <li><a href="{% url "gallery" %}">Photo Gallery</a></li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </nav>
+        </header>

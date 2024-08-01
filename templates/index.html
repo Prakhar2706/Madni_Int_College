@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MADNI INTER COLLEGE</title>
+    <link rel="icon" type="image/png" href="static/img/mic_logo.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body id="home">
+    <!-- Start Your Body Code From here -->
+    <div class="wrapper">
+        <!-- header starts here -->
+        
+        <!-- /header -->
+
+        <!-- carousel -->
+        <div class="carousel-wrapper">
+            <div class="carousel" style="margin: 0 auto">
+                {% for d in FloatingData%}
+                <div class="carousel-items">
+                    <img height="400px" width="570" src="{{d.Floating_img.url }}" alt="Faculty">  
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        <!-- Announcements, Events, News -->
+        <div class="widgets-wrapper">
+            <div class="widgets-container">
+                <!-- Announcements -->
+                <div class="col-sm-4" id="announcements">
+                    <div class='announcement-content '>
+                        <div class="widgets-title">
+                            <h2>Announcements</h2>
+                        </div>
+                        {% for m in AnnouncementData%}
+                        <ul id="announcement-list">
+                            <li>
+                                {{m.Announcement_name}}<br>
+                                {{m.Announcement_des}}
+                            </li>
+                        </ul>
+                        {% endfor%}
+                    </div>
+                </div>
+                <!-- Events -->
+                <div class="col-sm-4" id="events">
+                    <div class="events-content">
+                        <div class="widgets-title">
+                            <h2>Events</h2>
+                        </div>
+                        <div>
+                        {% for n in EventData%}
+                        <ul id="events-list">
+                            <li>
+                                <!-- Events -->
+                                <div class="event-container">
+                                    <!-- Date -->
+                                    <div class="date">
+                                        <span>
+                                            <!-- Day -->
+                                            <div class="day">{{n.Event_date}} </div>
+                                            <!-- Month Short Form (first three letters) -->
+                                            <div class="month">{{n.Event_month}}</div>
+                                        </span>
+                                    </div>
+                                    <!-- Event-Description -->
+                                    <div class="event-text">{{n.Event_des}} </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </div>     
+                    </div>
+                </div>
+                <div class="col-sm-4" id="news">
+                    <div class='news-content '>
+                        <div class="widgets-title">    
+                            <h2>News</h2>
+                        </div> 
+                        {% for k in NewsData%} 
+                        <ul id="news-list">    
+                            <li>
+                               {{k.News_name}} <p>{{k.News_des}} </p>
+                            </li>
+                        </ul>
+                        {% endfor%}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/js/jquery.paginate.min.js "></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/434d359724.js"></script>
+    <script src="static/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover();
+            $('[data-toggle="popover"]').on('click', function(e) {
+                $('[data-toggle="popover"]').not(this).popover('hide');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+{% endblock content %}

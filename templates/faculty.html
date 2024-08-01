@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MADNI INTER COLLEGE | Faculty</title>
+    <!--Style Starts-->
+    <link rel="icon" type="image/png" href="static/img/mic_logo.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+    <!-- Start Your Body Code From here -->
+    <div class="wrapper">
+        <!-- header starts here -->
+       
+        <!-- /header -->
+        <!-- Content wrapper -->
+        <div class="contents-wrapper">
+            <!-- Contents starts here -->
+            <div class="content faculty-list">
+                <h1>Faculty</h1>
+                <br>
+                <ul class="list-group">
+                    {% for j in FacultyData%}
+                    <li class="list-group-item">
+                        <h3>
+                            <a href="{{j.Faculty_img.url }}">{{j.Faculty_name}}</a>
+                        </h3>
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <img src="{{j.Faculty_img.url }}" height="140" width="100">
+                            </div>
+                            <div class="col-sm-10 col-md-10 col-lg-10">
+                                <b> {{j.Faculty_degree}}<br>
+                                 {{j.Faculty_address}}
+                                <br/> {{j.Faculty_contact}}
+                                <br/> {{j.Faculty_email}}
+                                </b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- Footer -->
+        
+    </div>
+    <!--Scripts Starts-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/434d359724.js"></script>
+    <script>
+        $(document).on('click', function(e) {
+            var
+                $popover,
+                $target = $(e.target);
+            //do nothing if there was a click on popover content
+            if ($target.hasClass('popover') || $target.closest('.popover').length) {
+                return;
+            }
+            $('[data-toggle="popover"]').each(function() {
+                $popover = $(this);
+                if (!$popover.is(e.target) &&
+                    $popover.has(e.target).length === 0 &&
+                    $('.popover').has(e.target).length === 0) {
+                    $popover.popover('hide');
+                } else {
+                    //fixes issue described above
+                    $popover.popover('toggle');
+                }
+            });
+        })
+    </script>
+</body>
+</html>
+{% endblock content %}
