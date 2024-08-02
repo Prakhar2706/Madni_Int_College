@@ -698,18 +698,26 @@ footer {
     border-top: 4px solid rgb(50, 50, 50);
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: center;
+=======
+>>>>>>> origin/main
     margin-top: 5rem;
 }
 
 .footer-wrapper {
     padding: 6rem 1rem 2rem 1rem;
+<<<<<<< HEAD
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
+=======
+    ;
+    position: relative;
+>>>>>>> origin/main
 }
 
 .seperator:after {
@@ -719,10 +727,13 @@ footer {
 
 footer .row {
     font-size: 1.5rem;
+<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+=======
+>>>>>>> origin/main
 }
 
 .links a {
@@ -739,15 +750,19 @@ footer .row {
 
 .footer-social {
     font-size: 2rem;
+<<<<<<< HEAD
     display: flex;
     gap: 1rem;
     right: -14%;
+=======
+>>>>>>> origin/main
 }
 
 .footer-social a {
     color: rgb(50, 50, 50);
     margin: 0 0.25rem;
     opacity: 0.85;
+<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
@@ -756,17 +771,26 @@ footer .row {
     border: 2px solid rgb(50, 50, 50);
     border-radius: 8px;
     text-decoration: none;
+=======
+>>>>>>> origin/main
 }
 
 .footer-social a:hover {
     opacity: 1;
+<<<<<<< HEAD
     background-color: rgba(50, 50, 50, 0.1);
+=======
+>>>>>>> origin/main
 }
 
 .footer-wrapper>.logo {
     position: absolute;
     top: -4.8rem;
+<<<<<<< HEAD
     left: 50%;
+=======
+    left: 43%;
+>>>>>>> origin/main
     background-color: #F0F0F0;
     padding: 1.6rem;
     border-radius: 100%;
