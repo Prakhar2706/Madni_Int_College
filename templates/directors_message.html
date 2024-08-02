@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MADNI INTER COLLEGE</title>
+    <!--Style Starts-->
+    <link rel="icon" type="image/png" href="static/img/mic_logo.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+    <!-- Start Your Body Code From here -->
+    <div class="wrapper">
+        <!-- header starts here -->
+        
+        <!-- /header -->
+        <div class="contents-wrapper">
+            <!-- Contents starts here -->
+            <div class="content dir-msg">
+                <div class="dir-detail">
+                    <img class="responsive-img circle" height="250" width="220" src="static/img/arshad.jpg">
+                    <div>Dr. Arshad Rais</div>
+                    <div>
+                        Director
+                    </div>
+                    <div>
+                        Phd JMI Delhi
+                    </div>
+                </div>
+                <div class="dir-text">
+                    <p>
+                        Dr. Arshad Rais obtained his PhD from Jamia Millia Islamiya University in the field of Arabic Language after completing his M. Phil from the University of Delhi. His areas of interest include education as well as social work. Dr. Arshad Rais has 12 years
+                        of experience in research, teaching and academic administration. Prior to joining MADNI INTER COLLEGE, he has worked in WNS Global Sevices, Gurugram as language expert / Translator.
+                    </p>
+                    <blockquote>
+                        <p>“I can't change the direction of the wind, but I can adjust my sails to always reach the destination.” -Jimmy Dean</p>
+                    </blockquote>
+                    <p>
+                        You have infinite potential. Your attitude can make or break you, so turn your attitude into one of gratitude, faith, trust, and above all optimism. Current environment is characterized by the need to constantly innovate and to reinvent oneself in order
+                        to sustain and grow one's stature in the industry. to realize their potential in full. Along with expertise in core subject knowledge we aim to improve their communication skills, critical thinking abilities, problem solving skills,
+                        creativity, moral values and sense of responsibility. Our educational and training programmes are anchored around the same philosophy. Though still at its nascent stage, As an institute, we are committed towards creating a community
+                        which is vibrant and provides a lifetime learning experience both professionally and personally.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        
+    </div>
+    <!--Scripts Starts-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/434d359724.js"></script>
+    <script>
+        $(document).on('click', function(e) {
+            var
+                $popover,
+                $target = $(e.target);
+            //do nothing if there was a click on popover content
+            if ($target.hasClass('popover') || $target.closest('.popover').length) {
+                return;
+            }
+            $('[data-toggle="popover"]').each(function() {
+                $popover = $(this);
+                if (!$popover.is(e.target) &&
+                    $popover.has(e.target).length === 0 &&
+                    $('.popover').has(e.target).length === 0) {
+                    $popover.popover('hide');
+                } else {
+                    //fixes issue described above
+                    $popover.popover('toggle');
+                }
+            });
+        })
+    </script>
+</body>
+</html>
+{% endblock content %}

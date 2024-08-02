@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to MADNI INTER COLLEGE KAISERGANJ</title>
+    <!--Style Starts-->
+    <link rel="icon" type="image/png" href="static/img/mic_logo.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body id="home">
+    <!-- Start Your Body Code From here -->
+    <div class="wrapper">
+        <!-- header starts here -->
+        
+        <!-- /header -->
+        <div class="contents-wrapper">
+            <!-- Contents starts here -->
+            <div class="content">
+                <h1>FAQs</h1>
+                <p class="small">
+                    Madni Inter College- Kaisarganj, was established in 2016 by a group of concerned residents of Kaisarganj, District Bahraich (U.P.). Since its establishment, the college has been constantly serving the local people in a well planned way so that the students
+                    may avail the opportunity of attaining quality education in an affordable way and join further higher education in a large number. Because of the selfless and sincere efforts of its management faculty, associates and the generous support
+                    of well-wishers, it has gained an unthought-of credibility and receptivity among the local people being facilitated during the past 7 years. It provides the excellent result with good percentage. It provides transport facility for
+                    students and faculty.
+                </p>
+                <br/>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <b>
+                            While the name of the Institute is Indian Institute of Information Technology Vadodara,
+                            why it is located at Gandhinagar and not at Vadodara?
+                        </b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        The Institute will be allotted land in Kaiserganj. Thereafter the institute activities will be moved to Huzoorpur Road Kaisarganj. Till such time the institute will keep functioning from the temporary location in Kaisarganj.
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <b>
+                            How do I get admission in Madni Inter College?
+                        </b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Admissions are through the test conduct by the institute. The Institute conduct its own entrance examination. The admissions are purely based on entrance exam that conduct by institute.
+                        <br/>
+
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <b>
+                            What is the facility of hostels?
+                        </b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        Since the institute does not have any permanent infrastructure in Kaisarganj, a private premises is rented for the purpose of housing the hostel facility. The facility has rooms which can accommodate 2 students per room. The hostel is about 4 kms away
+                        from the Institue. Buses, on regular basis run between the Hostel and the Institute. It is proposed to have the mess facility in the hostel premises and in near future tender for operating the mess will be floated.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Footer -->
+        
+    </div>
+    <!--Scripts Starts-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js " integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin=" anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js " integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS " crossorigin="anonymous "></script>
+    <script src="https://use.fontawesome.com/434d359724.js "></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover "]').popover();
+            $('[data-toggle="popover "]').on('click', function(e) {
+                $('[data-toggle="popover "]').not(this).popover('hide');
+            });
+        });
+        $(document).on('click', function(e) {
+            var
+                $popover,
+                $target = $(e.target);
+            //do nothing if there was a click on popover content
+            if ($target.hasClass('popover') || $target.closest('.popover').length) {
+                return;
+            }
+            $('[data-toggle="popover "]').each(function() {
+                $popover = $(this);
+                if (!$popover.is(e.target) &&
+                    $popover.has(e.target).length === 0 &&
+                    $('.popover').has(e.target).length === 0) {
+                    $popover.popover('hide');
+                } else {
+                    //fixes issue described above
+                    $popover.popover('toggle');
+                }
+            });
+        })
+    </script>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MADNI INTER COLLEGE</title>
+    <!--Style Starts-->
+    <link rel="icon" type="image/png" href="static/img/mic_logo.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+</head>
+<body id="gallery">
+    <!-- Start Your Body Code From here -->
+    <div class="wrapper">
+        <!-- header starts here -->
+        
+        <!-- /header -->
+        <!-- Content wrapper -->
+        <div class="contents-wrapper">
+            <!-- Contents starts here -->
+            <div class="content">
+                <div class="gallery gallery-design">
+                    <div class="title">
+                        <h1>Gallery</h1>
+                    </div>
+                    
+                    <div class="grid">
+                        {%for i in GalleryData%}
+                        <div class="grid-sizer"></div>
+                        <!-- Remove appropriate comment and insert relevant caption if needed. -->
+
+                        <!--Image 1-->
+                        <a class="element-item grid-item mix mockups" href="{{i.Gallery_img.url}} ">
+                            <!--                            <div class="desc">
+                                                        <div class="desc-title">
+                                                            <span>Caption</span>
+                                                        </div>
+                                                    </div>
+                        --><img src="{{i.Gallery_img.url }}" height="150" width="100">
+                        </a>
+                        {%endfor%}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+       
+    </div>
+    <!--Scripts Starts-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/434d359724.js"></script>
+    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var $grid = $('.grid').imagesLoaded(function() {
+                $grid.masonry({
+                    itemSelector: '.grid-item',
+                    percentPosition: true,
+                    columnWidth: '.grid-sizer'
+                });
+            });
+
+            $('.grid').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                tLoading: 'Loading image #%curr%...',
+                mainClass: 'mfp-img-mobile',
+                zoom: {
+                    enabled: true,
+                    duration: 300,
+                    easing: 'ease-in-out'
+                },
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+                },
+                image: {
+                    verticalFit: true
+                }
+                // other options
+            });
+        })
+    </script>
+    <script>
+        $(document).on('click', function(e) {
+            var
+                $popover,
+                $target = $(e.target);
+
+            //do nothing if there was a click on popover content
+            if ($target.hasClass('popover') || $target.closest('.popover').length) {
+                return;
+            }
+
+            $('[data-toggle="popover"]').each(function() {
+                $popover = $(this);
+
+                if (!$popover.is(e.target) &&
+                    $popover.has(e.target).length === 0 &&
+                    $('.popover').has(e.target).length === 0) {
+                    $popover.popover('hide');
+                } else {
+                    //fixes issue described above
+                    $popover.popover('toggle');
+                }
+            });
+        })
+    </script>
+</body>
+</html>
+{% endblock content %}

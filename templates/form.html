@@ -1,0 +1,85 @@
+
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MADNI INTER COLLEGE| RTI</title>
+    <!--Style Starts-->
+    <link rel="icon" type="image/png" href="static/img/mic_logo.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <title>College Admission Form</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>
+            College Admission Form
+        </h2>
+        <form action="{% url "form" %}" method="POST" name="google-sheet">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="Full_Name" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Father's Name:</label>
+                <input type="text" id="name" name="Father_Name" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Mother's Name:</label>
+                <input type="text" id="name" name="Mother_Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="Contact" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Whatsapp Number:</label>
+                <input type="text" id="name" name="Whatsapp_Contact" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="Address" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="text" id="dob" name="Date_of_Birth" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" id="male" name="Gender" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="Class">Select Class:</label>
+                <input type="text" id="class" name="Class" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" class="btn-submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/434d359724.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover();
+            $('[data-toggle="popover"]').on('click', function(e) {
+                $('[data-toggle="popover"]').not(this).popover('hide');
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock content %}
