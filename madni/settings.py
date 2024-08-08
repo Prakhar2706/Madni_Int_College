@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 ]
 
 JAZZMIN_UI_TWEAKS = {
-    "theme": "slate",
+    "theme": "litera",
 }
 
 MIDDLEWARE = [
@@ -70,7 +70,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / "templates",
-    "/var/www/templates/",],
+        "/var/www/templates/",],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,4 +146,3 @@ MEDIA_URL= "/media/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-origin/main
